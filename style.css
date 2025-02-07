@@ -1,0 +1,122 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.main-menu, .game-container, .about-container, .achievements-container {
+    text-align: center;
+    background-color: #1a1a1a;
+    padding: 20px;
+    color: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+.menu-button {
+    padding: 10px 20px;
+    background-color: #5309ff;;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.menu-button:active {
+    background-color: #005bb5;
+}
+
+.stats {
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(6, 50px);
+    gap: 5px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.grid div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5309ff;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.keyboard button {
+    width: 40px;
+    height: 40px;
+    background-color: #5309ff;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.keyboard button:active {
+    background-color: #ccc;
+}
+
+.message {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.restart {
+    padding: 10px 20px;
+    background-color: #5309ff;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.restart:active {
+    background-color: #005bb5;
+}
+
+#achievements-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#achievements-list li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #383838;
+    font-size: 16px;
+}
+
+#achievements-list li.completed {
+    background-color: #4caf50;
+    color: white;
+}
+
+.h1back {
+    left: 19px;
+    position: absolute;
+    top: 1px;
+}
