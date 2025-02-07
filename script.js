@@ -19,8 +19,8 @@ const words = ["слово", "кросс", "флаг", "книга", "ручка
 let currentWord = "";
 let currentRow = 0;
 let currentAttempt = "";
-let xp = 0;
-let level = 1;
+let xp = parseInt(localStorage.getItem("xp")) || 0;
+let level = parseInt(localStorage.getItem("level")) || 1;
 
 const grid = document.querySelector(".grid");
 const keyboard = document.querySelector(".keyboard");
@@ -39,19 +39,6 @@ const aboutContainer = document.querySelector(".about-container");
 const achievementsContainer = document.querySelector(".achievements-container");
 const achievementsList = document.getElementById("achievements-list");
 const backButtonGame = document.getElementById("back-button-game");
-
-const tg = window.Telegram.WebApp;
-tg.expand(); 
-
-if (tg.initDataUnsafe.user) {
-    const userId = tg.initDataUnsafe.user.id;
-    xp = parseInt(localStorage.getItem(`xp_${userId}`)) || 0;
-    level = parseInt(localStorage.getItem(`level_${userId}`)) || 1;
-} else {
-    xp = parseInt(localStorage.getItem("xp")) || 0;
-    level = parseInt(localStorage.getItem("level")) || 1;
-}
-
 function initGame() {
     currentWord = words[Math.floor(Math.random() * words.length)];
     currentRow = 0;
@@ -157,14 +144,8 @@ function endGame() {
 }
 
 function saveStats() {
-    if (tg.initDataUnsafe.user) {
-        const userId = tg.initDataUnsafe.user.id;
-        localStorage.setItem(`xp_${userId}`, xp);
-        localStorage.setItem(`level_${userId}`, level);
-    } else {
-        localStorage.setItem("xp", xp);
-        localStorage.setItem("level", level);
-    }
+    localStorage.setItem("xp", xp);
+    localStorage.setItem("level", level);
 }
 
 function updateStatsDisplay() {
